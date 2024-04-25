@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ถอน</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="assets/css/style.css">
+<style>
+body {
+  background-color:white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #38444d;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(69, 83, 108);
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.column-3 {
+  column-count: 2;
+}
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ 
+  text-align: center;
+}
+
+
+</style>
+</head>
+<body >
+
+<nav>
+
+    <ul>
+        <li><a href="./home.html"><img src="assets/images/logo.png" width="50" alt="" srcset=""></a></li>
+        <li><a href=""><p id="name"></p></a></li>
+        <li><a href=""><p id="amount"></p></a></li>
+        <li><a href="./deposit.html"><p>ฝากเงิน</p></a></li>
+        <li><a href="./withdraw.html"><p>ถอนเงิน</p></a></li>
+        <li><a href="./listUser.html"><p>รายชื่อผู้ใช้</p></a></li>
+        <li><a onclick="localStorage.clear()" href="./index.html"><p>ออกจากระบบ</p></a></li>
+      </ul>
+</nav>
+
+
+
+<div style="max-width: 500px; margin: auto;">
+
+
+    <center>
+    <img src="assets/images/logo.png" width="200" alt="" srcset="">
+    <center>
+
+    <h3>ถอนเงินจาก Protoss Wallet</h3>
+    <div>
+        <form action="" id="formElem"">
+            <label for="fname">เลขบัญชี</label>
+            <input type="text" id="fname" name="accountNo" disabled placeholder="" required>
+
+            <label for="lname">จำนวนเงิน</label>
+            <input type="number" min="1" value="100" id="lname" name="amount" placeholder="จำนวนเงิน" required>
+            <!-- <a href="resister.html"> คุณยังไม่เคยลงทะเบียนใช่ไหม?</a> -->
+           
+            <input type="submit" value="Submit">
+            <!-- <input type="reset" value="Reset"> -->
+        </form>
+    </div>
+</div>
+  
+
+
+
+</table>
+  
+    
+
+
+
+
+
+
+
+<footer class="footer">
+    <hr>
+  <center>
+    <div style="margin-top: 10px;"></div>
+    <a href="https://shop.9arm.co/" target="_blank">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+    </a>
+        <p>&copy; Copyright 2021 | Made with &hearts by </p>
+
+  </center>
+</footer>
+
+
+
+
+</body>
+
+<script>
+
+    function setName(){
+        let fname = localStorage.getItem("firstName")
+        let lname = localStorage.getItem("lastName")
+        document.getElementById("name").innerHTML =  fname+'   '+lname
+        document.getElementById("amount").innerHTML =  "ยอดเงิน " + localStorage.getItem("amount")
+        document.getElementById("name").innerHTML =  fname+'   '+lname
+        let  form = document.forms['formElem'];
+        form.accountNo.value = localStorage.getItem("accountNo") 
+
+    }
+
+    setName()
+
+
+    let form = document.querySelector("#formElem");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        sendForm();
+    });
+   async  function sendForm() {
+
+        try {
+            let  data =  new FormData(form)
+            let response = await fetch(`http://localhost:8088/AtmService/withdraw?accountNo=${localStorage.getItem("accountNo")}&amount=${data.get("amount")}`, {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json;charset=UTF-8'
+                },
+                // body: JSON.stringify(Object.fromEntries(data))
+            });
+           let res =    await response.json() 
+           if(res.status){
+                alert('ถอนสำเร็จ')
+              
+                localStorage.setItem("amount",res.data.amount);
+               
+                location.reload()
+
+           }else{
+                alert(res.message)
+           }
+        } catch (e) {
+            console.error(e);
+  }
+}
+  
+
+</script>
+
+
+
+</html>
+
+

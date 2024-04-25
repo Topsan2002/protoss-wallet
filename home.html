@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/icon type">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+<style>
+body {
+  background-color:white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #38444d;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(69, 83, 108);
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.column-3 {
+  column-count: 2;
+}
+
+#blog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.blog-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.blog-heading span{
+    color: #f33c3c;
+}
+.blog-heading h3{
+    font-size: 2.4rem;
+    color: #2b2b2b;
+    font-weight: 600;
+}
+.blog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+ 
+.blog-box{
+    width:350px;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    margin: 20px 20px;
+ 
+}
+.blog-img{
+    width:100%;
+    height: auto;
+}
+.blog-img img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.blog-text{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.blog-text span{
+    color: #f33c3c;
+    font-size: 0.9rem;
+}
+.blog-text .blog-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #272727;
+}
+.blog-text p{
+    color: #9b9b9b;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+}
+.blog-text a{
+    color: #0f0f0f;
+}
+.blog-text a:hover{
+    color: #c74242;
+    transition: all ease 0.3s;
+}
+ 
+ 
+@media(max-width:1250px){
+ 
+    .blog-box{
+        width: 300px;
+    }
+} 
+@media(max-width:1100px){
+    .blog-box{
+        width:70%;
+    }
+}
+ 
+@media(max-width:550px){
+   
+    .blog-box{
+        margin: 20px 10px;
+        width: 100%;
+    }
+    #blog{
+        padding:20px;
+    }
+}
+ 
+
+</style>
+</head>
+<body >
+
+<nav>
+
+    <ul>
+        <li><a href="./home.html"><img src="assets/images/logo.png" width="50" alt="" srcset=""></a></li>
+        <li><a href=""><p id="name"></p></a></li>
+        <li><a href=""><p id="amount"></p></a></li>
+        <li><a href="./deposit.html"><p>ฝากเงิน</p></a></li>
+        <li><a href="./withdraw.html"><p>ถอนเงิน</p></a></li>
+        <li><a href="./listUser.html"><p>รายชื่อผู้ใช้</p></a></li>
+        <li><a onclick="localStorage.clear()" href="./index.html"><p>ออกจากระบบ</p></a></li>
+      </ul>
+</nav>
+
+
+<section>
+
+
+
+<center style="margin-top: 10px;">
+
+
+<video width="400"  controls>
+    <source src="assets/video/song.mp4"  type="video/mp4">
+    <!-- <source src="movie.ogg" type="video/ogg"> -->
+  <!-- Your browser does not support the video tag. -->
+  </video>
+
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/Kzb9RaFvOz4?si=HfilylZH3ospDHCn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ 
+  <iframe width="400" height="225" src="https://www.youtube.com/embed/AY4bCOqzwd8?si=sdH9BkqsAUFIMDCa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+</section>
+
+
+
+<section id="blog">
+    <!--blog-heading--------------->
+    <div class="blog-heading">
+      <span>My Recent Posts</span>
+      <h3>My Blog</h3>
+    </div>
+
+
+    <!--container---------------->
+    <div class="blog-container">
+
+      <!--box-1------------->
+      <div class="blog-box">
+
+        <!--img---->
+        <div class="blog-img">
+          <img alt="blog" src="assets/images/logo.png">
+        </div>
+        <!--text--->
+        <div class="blog-text">
+          <span>18 July 2021 / Web Design</span>
+          <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+          <a href="#">Read More</a>
+        </div>
+
+      </div>
+
+
+      <!--box-2------------->
+      <div class="blog-box">
+
+        <!--img---->
+        <div class="blog-img">
+          <img alt="blog" src="assets/images/logo.png">
+        </div>
+        <!--text--->
+        <div class="blog-text">
+          <span>18 July 2021 / Web Design</span>
+          <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+          <a href="#">Read More</a>
+        </div>
+
+      </div>
+
+      
+
+
+
+     
+
+      </div>
+
+    </div>
+
+
+
+    <!--container---------------->
+    <div class="blog-container">
+
+        <!--box-1------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+  
+        <!--box-2------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+      
+        </div>
+  
+      </div>
+
+
+    <!--container---------------->
+    <div class="blog-container">
+
+        <!--box-1------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+  
+        <!--box-2------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+
+  
+        </div>
+  
+      </div>
+
+
+    <!--container---------------->
+    <div class="blog-container">
+
+        <!--box-1------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+  
+        <!--box-2------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+        
+
+       
+  
+        </div>
+  
+      </div>
+
+
+    <!--container---------------->
+    <div class="blog-container">
+
+        <!--box-1------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+  
+        <!--box-2------------->
+        <div class="blog-box">
+  
+          <!--img---->
+          <div class="blog-img">
+            <img alt="blog" src="assets/images/logo.png">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>18 July 2021 / Web Design</span>
+            <a href="#" class="blog-title">What Has Happened to All of the Web Design Ideas?</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate facilis modi veritatis adipisci omnis perferendis deleniti tempore quasi? Explicabo recusandae soluta vel cum perspiciatis consequuntur dolorum distinctio minima voluptate quae?</p>
+            <a href="#">Read More</a>
+          </div>
+  
+        </div>
+  
+        
+  
+  
+  
+       
+  
+        </div>
+  
+      </div>
+
+
+
+  </section>
+
+
+  <section>
+    <hr>
+    <center>
+
+   
+    <h3>แจ้งปัญหา</h3>
+    <form onsubmit="saveProblem()" action="" method="post">
+        <label for="">ความสำคัญ</label> 
+        <input type="checkbox" name="checkbox" id=""> <br>
+        <label for="">Email สำหรับตอบกลับ</label>
+        <input type="email" name="" id=""> <br>
+        <label for="">ปัญหา</label>
+        <input type="text"> <br>
+        <label for="">วันเวลาที่เกิดปัญหา</label>
+        <input type="datetime" name="" id=""> <br>
+        <input type="submit" value="save">
+    </form>
+    </center>
+  </section>
+
+  
+
+
+
+
+
+
+
+<footer>
+    <hr>
+  <center>
+    <div style="margin-top: 10px;"></div>
+    <a href="https://shop.9arm.co/" target="_blank">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+        <img style="border-radius: 50%;" width="50" src="https://shop.9arm.co/cdn/shop/files/shirt.jpg?v=1692150674" alt="Avatar">
+    </a>
+        <p>&copy; Copyright 2021 | Made with &hearts by </p>
+
+  </center>
+</footer>
+
+
+
+
+</body>
+
+<script>
+
+    function setName(){
+        let fname = localStorage.getItem("firstName")
+        let lname = localStorage.getItem("lastName")
+        document.getElementById("name").innerHTML =  fname+'   '+lname
+        document.getElementById("amount").innerHTML =  "ยอดเงิน " + localStorage.getItem("amount") 
+        document.getElementById("name").innerHTML =  fname+'   '+lname
+
+    }
+
+    setName()
+
+    function saveProblem(){
+        alert('Save Problem')
+    }
+
+</script>
+</html>
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+<style>
+    .content {
+        max-width: 500px;
+        margin: auto;
+    }
+</style>
+
+<body>
+
+    <div class="content">
+
+
+        <center>
+        <img src="assets/images/logo.png" width="200" alt="" srcset="">
+        <center>
+
+        <h3>ยินดีต้อนรับสู่ Protoss Wallet</h3>
+        <div>
+            <form action="/action_page.php" id="formElem"">
+                <label for="fname">Username</label>
+                <input type="text" id="fname" name="username" placeholder="Enter Username" required>
+
+                <label for="lname">Password</label>
+                <input type="text" id="lname" name="password" placeholder="Enter Password" required>
+                <a href="resister.html"> คุณยังไม่เคยลงทะเบียนใช่ไหม?</a>
+               
+                <input type="submit" value="Submit">
+                <!-- <input type="reset" value="Reset"> -->
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    
+ 
+
+    let form = document.querySelector("#formElem");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendForm();
+});
+   async  function sendForm() {
+
+        try {
+            let  data =  new FormData(form)
+           
+                let response = await fetch('http://localhost:8088/AtmService/login', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    },
+                    body: JSON.stringify(Object.fromEntries(data))
+                });
+           let res =    await response.json() 
+           if(res.status){
+                alert(res.message)
+                // console.log(res.data);
+                localStorage.setItem("id",res.data.id);
+                localStorage.setItem("firstName",res.data.firstName);
+                localStorage.setItem("lastName",res.data.lastName);
+                localStorage.setItem("accountNo",res.data.accountNo);
+                localStorage.setItem("amount",res.data.amount);
+                window.location.replace("/home.html")
+           }else{
+                alert(res.message)
+           }
+        } catch (e) {
+            console.error(e);
+  }
+}
+
+  </script>
+  
+
+</html>
