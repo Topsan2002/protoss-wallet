@@ -146,7 +146,25 @@ li.dropdown {
 </table>
   
     
+<!-- <section>
+    <hr>
+    <center>
 
+   
+    <h3>แจ้งปัญหา</h3>
+    <form onsubmit="saveProblem()" action="" method="post">
+        <label for="">ความสำคัญ</label> 
+        <input type="checkbox" name="checkbox" id=""> <br>
+        <label for="">Email สำหรับตอบกลับ</label>
+        <input type="email" name="" id=""> <br>
+        <label for="">ปัญหา</label>
+        <input type="text"> <br>
+        <label for="">วันเวลาที่เกิดปัญหา</label>
+        <input type="datetime" name="" id=""> <br>
+        <input type="button" onclick="alert('Save Problem')" value="save">
+    </form>
+    </center>
+  </section> -->
 
 
 
@@ -154,6 +172,8 @@ li.dropdown {
 
 
 <footer class="footer">
+
+  
     <hr>
   <center>
     <div style="margin-top: 10px;"></div>
@@ -220,7 +240,7 @@ li.dropdown {
                 location.reload()
 
            }else{
-                alert(res.message)
+                alert(res.messages)
            }
         } catch (e) {
             console.error(e);

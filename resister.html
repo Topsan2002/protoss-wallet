@@ -196,7 +196,7 @@ form.addEventListener("submit", (event) => {
                 });
            let res =    await response.json() 
            if(res.status){
-                alert(res.message)
+                alert('สมัครสำเร็จ')
                 window.location.replace("/")
            }else{
                 alert(res.message)
